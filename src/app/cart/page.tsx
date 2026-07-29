@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 interface CartItem {
   id: number;
@@ -208,22 +210,7 @@ export default function CartPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="border-b border-gray-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-black flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight">Store</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900">Back to Store</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar backLink hideCartIcon />
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -310,6 +297,8 @@ export default function CartPage() {
           )}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
