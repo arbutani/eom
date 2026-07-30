@@ -15,8 +15,9 @@ export const products = {
     details: ["Bottom Type: Pants", "Fit/Shape: A-line", "Print/Pattern Type: Floral", "Kurta Fabric: Cotton Blend", "Additional Details: Bottomwear Fabric: Cotton Blend", "Kurta Color: Purple", "Bottomwear Color: Purple", "Set Type: Kurta With Dupatta And Bottomwear", "Dupatta Fabric: Cotton Silk", "Dupatta Color: Purple", "Stitch Type: Stitched", "Length: Calf Length", "Neck: V-neck", "Sleeve Length: Three-Quarter Sleeves", "Sleeve Styling: Regular", "Pattern: Embroidered", "Ornamentation: Embroidered", "Net Quantity (N): Single", "Occasion: Party", "Brand: Fashion Mint", "Country of Origin: India"],
     discount: "56% off",
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
+    category: "dresses-gowns",
   },
-  5: {
+   5: {
     id: 5,
     name: "Anarkali Suit Women - Purple",
     price: "₹1200",
@@ -31,8 +32,9 @@ export const products = {
     details: ["Bottom Type: Pants", "Fit/Shape: A-line", "Print/Pattern Type: Floral", "Kurta Fabric: Cotton Blend", "Additional Details: Bottomwear Fabric: Cotton Blend", "Kurta Color: Purple", "Bottomwear Color: Purple", "Set Type: Kurta With Dupatta And Bottomwear", "Dupatta Fabric: Cotton Silk", "Dupatta Color: Purple", "Stitch Type: Stitched", "Length: Calf Length", "Neck: V-neck", "Sleeve Length: Three-Quarter Sleeves", "Sleeve Styling: Regular", "Pattern: Embroidered", "Ornamentation: Embroidered", "Net Quantity (N): Single", "Occasion: Party", "Brand: Fashion Mint", "Country of Origin: India"],
     discount: "56% off",
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
+    category: "dresses-gowns",
   },
-  6: {
+   6: {
     id: 6,
     name: "Daily Wear Kurti (Combo Pack 6 Kurta)",
     price: "₹1200",
@@ -48,8 +50,9 @@ export const products = {
     details: ["Color: Green", "Fabric: Poly Crepe", "Fit/Shape: A-line", "Length: Calf Length", "Neck: Round", "Print/Pattern Type: Ethnic Motif", "Combo of: Combo of 6", "Ornamentation: Cutouts", "Stitch Type: Stitched", "Sleeve Length: Three-Quarter Sleeves", "Sleeve Styling: Regular", "Pattern: Printed", "Occasion: Daily", "Brand: Glamson", "Country of Origin: India"],
     discount: "56% off",
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+    category: "tops-tees",
   },
-  7: {
+   7: {
     id: 7,
     name: "Traditional Cotton Ajrakh Printed Kurti For Women",
     price: "₹1200",
@@ -65,8 +68,9 @@ export const products = {
     details: ["Color: Black", "Fabric: Cotton Cambric", "Fit/Shape: Straight", "Length: Calf Length", "Neck: Round", "Print/Pattern Type: Floral", "Combo of: Single", "Ornamentation: Tassels and Latkans", "Stitch Type: Stitched", "Sleeve Length: Three-Quarter Sleeves", "Sleeve Styling: Regular", "Pattern: Printed", "Occasion: Daily", "Generic Name: Kurtis", "Country of Origin: India"],
     discount: "82% off",
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL", "6XL"],
+    category: "tops-tees",
   },
-  8: {
+   8: {
     id: 8,
     name: "Women Kurta",
     price: "₹1200",
@@ -82,8 +86,9 @@ export const products = {
     details: ["Color: Mint Green", "Fabric: Rayon", "Fit/Shape: Anarkali", "Length: Ankle Length", "Neck: Mandarin", "Print/Pattern Type: Floral", "Combo of: Single", "Ornamentation: Show Button", "Stitch Type: Stitched", "Sleeve Length: Three-Quarter Sleeves", "Sleeve Styling: Regular", "Pattern: Printed", "Occasion: Daily", "Generic Name: Kurtis", "Country of Origin: India"],
     discount: "65% off",
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+    category: "tops-tees",
   },
-  9: {
+   9: {
     id: 9,
     name: "Stylish Women Fancy Dresses l Casual & Party Wear",
     price: "₹297",
@@ -99,6 +104,7 @@ export const products = {
     details: ["Color: Black", "Fabric: Cotton Blend", "Fit/Shape: Fit and Flare", "Length: Maxi", "Neck: Square Neck", "Print or Pattern Type: Floral", "Surface Styling: Pleated or Gathered", "Occasion: Casual", "Sleeve Length: Short Sleeves", "Sleeve Styling: Regular", "Pattern: Printed", "Net Quantity (N): 1", "Add On: No Add on", "Character: Not Applicable", "TYPE: One Piece", "Generic Name: Dresses", "Country of Origin: India"],
     discount: "50% off",
     sizes: ["S", "M", "L", "XL", "XXL"],
+    category: "dresses-gowns",
   },
 };
 
