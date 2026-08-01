@@ -32,7 +32,7 @@ export default function PlusSizePage() {
             <Link href="/category/plus-size-dresses-gowns" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/5.png"
+                  src="/5.webp"
                   alt="Plus Size Dresses and Gowns"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -49,7 +49,7 @@ export default function PlusSizePage() {
             <Link href="/category/plus-size-tops-tees" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/6.png"
+                  src="/6.webp"
                   alt="Plus Size Tops and Tees"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -66,7 +66,7 @@ export default function PlusSizePage() {
             <Link href="/category/plus-size-bottomwear" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/7.png"
+                  src="/7.webp"
                   alt="Plus Size Bottomwear"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

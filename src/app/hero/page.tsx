@@ -125,7 +125,7 @@ export default function HeroPage() {
             <div className="relative animate-fade-up-2">
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-md mx-auto">
                 <img
-                  src="/1.png"
+                  src="/1.webp"
                   alt="Ethnic wear collection"
                   className="w-full h-full object-cover"
                 />
@@ -172,7 +172,7 @@ export default function HeroPage() {
             <Link href="/category/plus-size" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/2.png"
+                  src="/2.webp"
                   alt="Plus Size collection"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -189,7 +189,7 @@ export default function HeroPage() {
             <Link href="/category/maternity" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/3.png"
+                  src="/3.webp"
                   alt="Maternity collection"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -211,7 +211,7 @@ export default function HeroPage() {
       <section className="relative py-28 overflow-hidden font-body">
   <div className="absolute inset-0">
     <img
-      src="/4.png"
+      src="/4.webp"
       alt="Fashion background"
       className="w-full h-full object-cover object-center"
       style={{ objectPosition: "40% 38%" }}
