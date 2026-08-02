@@ -1,6 +1,6 @@
 "use client";
 
-import { products } from "@/lib/products";
+import { products, type Product } from "@/lib/products";
 import { useState } from "react";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
@@ -20,8 +20,8 @@ export default function ProductPage() {
   }
 
   const isAnarkali = baseId === 4 || baseId === 5;
-  const variants = isAnarkali ? [products[4], products[5]].filter(Boolean) : [];
-  const product = isAnarkali ? (selectedVariant === 5 && products[5] ? products[5] : products[4]) : baseProduct;
+  const variants = isAnarkali ? [(products as any)[4], (products as any)[5]].filter(Boolean) as Product[] : [];
+  const product = isAnarkali ? ((selectedVariant === 5 && (products as any)[5] ? (products as any)[5] : (products as any)[4]) as Product) : baseProduct;
 
   const hasMultipleImages = "images" in product && Array.isArray((product as any).images);
   const sizes = (product as any).sizes;
@@ -50,7 +50,7 @@ export default function ProductPage() {
                 <div className="grid grid-cols-2 gap-4">
                   {(product as any).images.map((img: string, idx: number) => (
                     <div key={idx} className="aspect-square bg-gray-100 rounded-2xl overflow-hidden">
-                      <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-contain" style={{clipPath: 'inset(0 0 20px 0)'}} />
+                      <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-contain" />
                     </div>
                   ))}
                 </div>

@@ -229,7 +229,7 @@ export default function CartPage() {
                 {cartItems.map((item) => (
                   <div key={`${item.id}-${item.size || "no-size"}`} className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border border-gray-100 rounded-2xl p-4">
                     <div className="w-full sm:w-24 h-48 sm:h-24 bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" style={{clipPath: 'inset(0 0 20px 0)'}} />
+                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                     </div>
                     <div className="flex-1">
                       <h2 className="text-lg font-semibold text-gray-900">{item.name}</h2>

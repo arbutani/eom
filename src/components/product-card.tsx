@@ -6,7 +6,7 @@ export default function ProductCard({ product }: { product: Product }) {
     <Link href={`/product/${product.id}`} className="group block h-full">
       <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col h-full">
         <div className="aspect-square bg-gray-100 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-          <img src={product.image} alt={product.name} className="w-full h-full object-contain" style={{clipPath: 'inset(0 0 20px 0)'}} />
+          <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
         </div>
         <div className="flex flex-col flex-1">
           <div>
