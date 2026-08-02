@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { products } from "@/lib/products";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
@@ -21,81 +22,6 @@ interface StoredCartItem {
   quantity: number;
   size?: string;
 }
-
-const products: Record<number, Omit<CartItem, "quantity" | "size">> = {
-  1: {
-    id: 1,
-    name: "Premium Wireless Headphones",
-    price: "$199",
-    image: "🎧",
-    desc: "High-quality wireless headphones with active noise cancellation, 30-hour battery life, and premium comfort.",
-    details: ["Active Noise Cancellation", "30-hour Battery Life", "Premium Memory Foam Ear Cushions", "Bluetooth 5.0", "Built-in Microphone"],
-  },
-  2: {
-    id: 2,
-    name: "Smart Watch Series 5",
-    price: "$299",
-    image: "⌚",
-    desc: "Advanced smartwatch with health tracking, GPS, and a stunning always-on display.",
-    details: ["Always-On Retina Display", "Blood Oxygen Sensor", "GPS + Cellular", "Water Resistant 50m", "18-hour Battery Life"],
-  },
-  3: {
-    id: 3,
-    name: "Leather Backpack",
-    price: "$149",
-    image: "🎒",
-    desc: "Genuine leather backpack designed for the modern professional.",
-    details: ["Genuine Full-Grain Leather", "Padded Laptop Compartment", "Adjustable Shoulder Straps", "Multiple Pockets", "Water-Resistant Lining"],
-  },
-  4: {
-    id: 4,
-    name: "Anarkali Suit Women",
-    price: "₹1200",
-    image: "https://tinyurl.com/womwn",
-    desc: "Kurti set with dupatta - Cotton kurta set with dupatta. Women Embroidery Bollywood Style Kurta and Pant set with Dupatta.",
-    details: ["Bottom Type: Pants", "Fit/Shape: A-line", "Print/Pattern Type: Floral", "Kurta Fabric: Cotton Blend", "Brand: Fashion Mint"],
-  },
-  5: {
-    id: 5,
-    name: "Anarkali Suit Women - Purple",
-    price: "₹1200",
-    image: "https://images.meesho.com/images/products/530603959/irh0a_512.avif?width=512",
-    desc: "Kurti set with dupatta - Cotton kurta set with dupatta. Women Embroidery Bollywood Style Kurta and Pant set with Dupatta.",
-    details: ["Bottom Type: Pants", "Fit/Shape: A-line", "Print/Pattern Type: Floral", "Kurta Fabric: Cotton Blend", "Brand: Fashion Mint"],
-  },
-  6: {
-    id: 6,
-    name: "Daily Wear Kurti (Combo Pack 6 Kurta)",
-    price: "₹1200",
-    image: "https://images.meesho.com/images/products/347210675/hlddp_512.avif?width=512",
-    desc: "Printed Crepe Straight Festival Kurti Wear - Combo Pack of 6 Kurtas",
-    details: ["Color: Green", "Fabric: Poly Crepe", "Fit/Shape: A-line", "Length: Calf Length", "Brand: Glamson"],
-  },
-  7: {
-    id: 7,
-    name: "Traditional Cotton Ajrakh Printed Kurti For Women",
-    price: "₹1200",
-    image: "https://images.meesho.com/images/products/499906523/ldgd8_512.avif?width=512",
-    desc: "Traditional Cotton Ajrakh Printed Kurti For Women - Black Color",
-    details: ["Color: Black", "Fabric: Cotton Cambric", "Fit/Shape: Straight", "Length: Calf Length", "Brand: Glamson"],
-  },
-  8: {
-    id: 8,
-    name: "Women Kurta",
-    price: "₹1200",
-    image: "https://images.meesho.com/images/products/149834633/saqqo_512.avif?width=512",
-    desc: "Women Kurta - Rayon fabric, Anarkali fit, Mint Green color",
-    details: ["Color: Mint Green", "Fabric: Rayon", "Fit/Shape: Anarkali", "Length: Ankle Length", "Brand: Glamson"],
-  },
-  9: {
-    id: 9,
-    name: "Stylish Women Fancy Dresses l Casual & Party Wear",
-    price: "₹297",
-    image: "https://images.meesho.com/images/products/426443566/jvzf7_512.avif?width=512",
-    desc: "Trendy western wear long frock for girls and women, party wear, stylish wear",
-    details: ["Color: Black", "Fabric: Cotton Blend", "Fit/Shape: Fit and Flare", "Length: Maxi", "Neck: Square Neck", "Print/Pattern Type: Floral", "Sleeve Length: Short Sleeves", "Occasion: Casual", "Generic Name: Dresses", "Country of Origin: India"],
-  },
-};
 
 function getStoredCart(): StoredCartItem[] {
   if (typeof window === "undefined") return [];
@@ -147,7 +73,7 @@ export default function CartPage() {
     const items = stored
       .filter((item) => item.quantity > 0)
       .map((item) => {
-        const product = products[item.id];
+        const product = (products as any)[item.id];
         if (!product) return null;
         return { ...product, quantity: item.quantity, size: item.size };
       })
