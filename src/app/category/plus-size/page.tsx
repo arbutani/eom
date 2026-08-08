@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { products } from "@/lib/products";
+import { items } from "@/lib/items";
 import ProductCard from "@/components/product-card";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -11,7 +11,10 @@ function ArrowRightIcon({ size = 18 }: { size?: number }) {
 }
 
 export default function PlusSizePage() {
-  const plusSizeProducts = Object.values(products).slice(0, 5);
+  const plusSizeProducts = Object.values(items)
+    .filter((p) => ["dresses-gowns", "bottomwear", "tops-tees"].includes(p.category))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5);
 
   return (
     <div className="min-h-screen bg-white">

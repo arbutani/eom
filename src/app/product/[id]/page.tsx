@@ -1,27 +1,27 @@
 "use client";
 
-import { products, type Product } from "@/lib/products";
+import { items, type Item } from "@/lib/items";
 import { useState } from "react";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
-export default function ProductPage() {
+export default function ItemPage() {
   const params = useParams();
   const baseId = Number(params.id);
-  const baseProduct = products[baseId as keyof typeof products];
+  const baseItem = items[baseId as keyof typeof items];
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [showSizeError, setShowSizeError] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState<number>(baseId);
 
-  if (!baseProduct) {
+  if (!baseItem) {
     notFound();
   }
 
   const isAnarkali = baseId === 4 || baseId === 5;
-  const variants = isAnarkali ? [(products as any)[4], (products as any)[5]].filter(Boolean) as Product[] : [];
-  const product = isAnarkali ? ((selectedVariant === 5 && (products as any)[5] ? (products as any)[5] : (products as any)[4]) as Product) : baseProduct;
+  const variants = isAnarkali ? [(items as any)[4], (items as any)[5]].filter(Boolean) as Item[] : [];
+  const product = isAnarkali ? ((selectedVariant === 5 && (items as any)[5] ? (items as any)[5] : (items as any)[4]) as Item) : baseItem;
 
   const hasMultipleImages = "images" in product && Array.isArray((product as any).images);
   const sizes = (product as any).sizes;
@@ -41,7 +41,7 @@ export default function ProductPage() {
     <div className="min-h-screen bg-white">
       <Navbar backLink />
 
-      {/* Product Detail */}
+      {/* Item Detail */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -105,14 +105,19 @@ export default function ProductPage() {
                   <div className="flex flex-wrap gap-3">
                     {sizes.map((size: string) => {
                       const isSelected = selectedSize === size;
+                      const availableSizes = (product as any).availableSizes;
+                      const isAvailable = !availableSizes || availableSizes.includes(size);
                       return (
                         <button
                           key={size}
-                          onClick={() => { setSelectedSize(size); setShowSizeError(false); }}
+                          onClick={() => { if (isAvailable) { setSelectedSize(size); setShowSizeError(false); } }}
+                          disabled={!isAvailable}
                           className={`px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${
                             isSelected
                               ? "border-black bg-black text-white"
-                              : "border-gray-300 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900"
+                              : isAvailable
+                                ? "border-gray-300 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900"
+                                : "border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed"
                           }`}
                         >
                           {size}
@@ -125,7 +130,7 @@ export default function ProductPage() {
               )}
 
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Product Highlights</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Item Highlights</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.details.map((detail) => {
                     const [label, value] = detail.split(": ");

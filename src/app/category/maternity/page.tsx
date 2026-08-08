@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { products } from "@/lib/products";
+import { items } from "@/lib/items";
 import ProductCard from "@/components/product-card";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -11,7 +11,7 @@ function ArrowRightIcon({ size = 18 }: { size?: number }) {
 }
 
 export default function MaternityPage() {
-  const maternityProducts = Object.values(products).filter((p) => p.category === "maternity");
+  const maternityProducts = Object.values(items).filter((p) => p.category === "maternity");
 
   return (
     <div className="min-h-screen bg-white">

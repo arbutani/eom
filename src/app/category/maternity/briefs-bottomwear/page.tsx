@@ -1,10 +1,10 @@
-import { products } from "@/lib/products";
+import { items } from "@/lib/items";
 import ProductCard from "@/components/product-card";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function MaternityBriefsBottomwearPage() {
-  const categoryProducts = Object.values(products).filter((p) => p.category === "briefs-bottomwear");
+  const categoryProducts = Object.values(items).filter((p) => p.category === "briefs-bottomwear");
 
   return (
     <div className="min-h-screen bg-white">

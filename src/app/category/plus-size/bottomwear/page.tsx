@@ -1,10 +1,10 @@
-import { products } from "@/lib/products";
+import { items } from "@/lib/items";
 import ProductCard from "@/components/product-card";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function PlusSizeBottomwearPage() {
-  const categoryProducts = Object.values(products).filter((p) => p.category === "bottomwear");
+  const categoryProducts = Object.values(items).filter((p) => p.category === "bottomwear");
 
   return (
     <div className="min-h-screen bg-white">
@@ -16,7 +16,7 @@ export default function PlusSizeBottomwearPage() {
               Plus Size - Bottomwear
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Plus-size bottomwear coming soon. Stay tuned for new arrivals.
+              Plus-size bottomwear crafted for comfort and style.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">

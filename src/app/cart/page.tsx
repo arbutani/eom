@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { products } from "@/lib/products";
+import { items } from "@/lib/items";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
@@ -70,15 +70,15 @@ export default function CartPage() {
 
   const loadCart = () => {
     const stored = getStoredCart();
-    const items = stored
+    const mappedItems = stored
       .filter((item) => item.quantity > 0)
       .map((item) => {
-        const product = (products as any)[item.id];
+        const product = (items as any)[item.id];
         if (!product) return null;
         return { ...product, quantity: item.quantity, size: item.size };
       })
       .filter(Boolean) as CartItem[];
-    setCartItems(items);
+    setCartItems(mappedItems);
   };
 
   useEffect(() => {
