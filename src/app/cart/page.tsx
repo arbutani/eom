@@ -208,9 +208,12 @@ export default function CartPage() {
                   <span>₹{total}</span>
                 </div>
                 <div className="space-y-3">
-                  <button className="w-full inline-flex items-center justify-center rounded-full bg-black px-8 py-3.5 text-base font-medium text-white hover:bg-gray-800 transition-colors">
+                  <Link
+                    href="/checkout"
+                    className="w-full inline-flex items-center justify-center rounded-full bg-black px-8 py-3.5 text-base font-medium text-white hover:bg-gray-800 transition-colors"
+                  >
                     Checkout
-                  </button>
+                  </Link>
                   <button
                     onClick={clearCart}
                     className="w-full inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-8 py-3.5 text-base font-medium text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-colors"
