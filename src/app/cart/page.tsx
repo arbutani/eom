@@ -86,17 +86,18 @@ export default function CartPage() {
 
     const productIdParam = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("id") : null;
     const sizeParam = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("size") : null;
+    const qtyParam = typeof window !== "undefined" ? Number(new URLSearchParams(window.location.search).get("qty")) : 1;
     if (productIdParam) {
       const id = Number(productIdParam);
       const stored = getStoredCart();
-      const existingIndex = stored.findIndex((item) => item.id === id && item.size === sizeParam);
+      const existingIndex = stored.findIndex((item) => item.id === id);
       if (existingIndex >= 0) {
-        stored[existingIndex].quantity += 1;
+        // already in cart, do not add again
       } else {
         stored.push({ id, quantity: 1, size: sizeParam || undefined });
+        saveCart(stored);
+        loadCart();
       }
-      saveCart(stored);
-      loadCart();
       if (typeof window !== "undefined") {
         window.history.replaceState({}, "", "/cart");
       }
@@ -105,14 +106,14 @@ export default function CartPage() {
 
   const updateQuantity = (productId: number, delta: number, size?: string) => {
     const stored = getStoredCart();
-    const index = stored.findIndex((item) => item.id === productId && item.size === size);
+    const index = stored.findIndex((item) => item.id === productId);
     if (index === -1) return;
-    const newQty = stored[index].quantity + delta;
+    const newQty = Math.max(stored[index].quantity + delta, 1);
     if (newQty <= 0) {
       removeItem(productId, size);
       return;
     }
-    stored[index].quantity = newQty;
+    stored[index].quantity = Math.min(newQty, 1);
     saveCart(stored);
     loadCart();
   };
@@ -161,23 +162,25 @@ export default function CartPage() {
                       <h2 className="text-lg font-semibold text-gray-900">{item.name}</h2>
                       <p className="text-base font-bold text-gray-900 mt-1">{item.price}</p>
                       {item.size && <p className="text-sm text-gray-500 mt-1">Size: {item.size}</p>}
-                      <div className="mt-3 inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white">
-                        <button
-                          onClick={() => updateQuantity(item.id, -1, item.size)}
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-l-full text-gray-600 hover:bg-gray-50 transition-colors"
-                          aria-label="Decrease quantity"
-                        >
-                          <MinusIcon />
-                        </button>
-                        <span className="w-10 text-center text-sm font-semibold text-gray-900">{item.quantity}</span>
-                        <button
-                          onClick={() => updateQuantity(item.id, 1, item.size)}
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-r-full text-gray-600 hover:bg-gray-50 transition-colors"
-                          aria-label="Increase quantity"
-                        >
-                          <PlusIcon />
-                        </button>
-                      </div>
+                        <div className="mt-3 inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white">
+                          <button
+                            onClick={() => updateQuantity(item.id, -1, item.size)}
+                            disabled={item.quantity <= 1}
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-l-full text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            aria-label="Decrease quantity"
+                          >
+                            <MinusIcon />
+                          </button>
+                          <span className="w-10 text-center text-sm font-semibold text-gray-900">{item.quantity}</span>
+                          <button
+                            onClick={() => updateQuantity(item.id, 1, item.size)}
+                            disabled={item.quantity >= 1}
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-r-full text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            aria-label="Increase quantity"
+                          >
+                            <PlusIcon />
+                          </button>
+                        </div>
                     </div>
                     <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-3 sm:gap-3">
                       <p className="text-base font-bold text-gray-900">₹{Number(item.price.replace("₹", "").replace("$", "")) * item.quantity}</p>
