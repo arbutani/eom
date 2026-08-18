@@ -168,7 +168,7 @@ export default function HeroPage() {
               Browse our collections curated just for you.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Link href="/category/plus-size" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
@@ -197,6 +197,23 @@ export default function HeroPage() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
                   <h3 className="font-display text-2xl font-semibold text-white">Maternity</h3>
                   <p className="text-sm text-gray-200 mt-1">Comfortable and stylish wear</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-white mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Shop now <ArrowRightIcon size={14} />
+                  </span>
+                </div>
+              </div>
+            </Link>
+            <Link href="/category/innerwear" className="group block">
+              <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
+                <img
+                  src="/11.webp"
+                  alt="Women's Innerwear collection"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                  <h3 className="font-display text-2xl font-semibold text-white">Women&apos;s Innerwear</h3>
+                  <p className="text-sm text-gray-200 mt-1">Everyday comfort & confidence</p>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                     Shop now <ArrowRightIcon size={14} />
                   </span>

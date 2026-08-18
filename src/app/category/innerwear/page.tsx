@@ -10,9 +10,9 @@ function ArrowRightIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-export default function MaternityPage() {
-  const maternityProducts = Object.values(items).filter(
-    (p) => p.category === "maternity" || p.category === "kurti-topwear" || p.category === "feeding-bras"
+export default function InnerwearPage() {
+  const innerwearProducts = Object.values(items).filter(
+    (p) => p.category === "innerwear" || p.category === "bras" || p.category === "briefs"
   );
 
   return (
@@ -23,58 +23,57 @@ export default function MaternityPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-              Maternity Collection
+              Women&apos;s Innerwear
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comfortable and stylish maternity wear designed for expecting mothers.
+              Comfortable and stylish innerwear for everyday confidence.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-20">
-            <Link href="/category/maternity/kurti-topwear" className="group block">
+            <Link href="/category/innerwear/bras" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/8.webp"
-                  alt="Kurti &amp; Topwear"
+                  src="/12.webp"
+                  alt="Bras"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                  <h3 className="font-display text-xl font-semibold text-white">Kurti &amp; Topwear</h3>
-                  <p className="text-sm text-gray-200 mt-1">Soft &amp; breathable</p>
+                  <h3 className="font-display text-xl font-semibold text-white">Bras</h3>
+                  <p className="text-sm text-gray-200 mt-1">Supportive & comfortable</p>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                     Shop now <ArrowRightIcon size={14} />
                   </span>
                 </div>
               </div>
             </Link>
-            <Link href="/category/maternity/feeding-bras" className="group block">
+            <Link href="/category/innerwear/briefs" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/9.webp"
-                  alt="Feeding Bras"
+                  src="/13.webp"
+                  alt="Briefs"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                  <h3 className="font-display text-xl font-semibold text-white">Feeding Bras</h3>
-                  <p className="text-sm text-gray-200 mt-1">Comfortable &amp; supportive</p>
+                  <h3 className="font-display text-xl font-semibold text-white">Briefs</h3>
+                  <p className="text-sm text-gray-200 mt-1">Soft & breathable</p>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                     Shop now <ArrowRightIcon size={14} />
                   </span>
                 </div>
               </div>
             </Link>
-
           </div>
 
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-4">
-              All Maternity Products
+              All Innerwear Products
             </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {maternityProducts.map((product) => (
+            {innerwearProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

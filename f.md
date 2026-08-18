@@ -57,7 +57,7 @@ Copy the template below and paste it before the closing `};` of the `items` obje
 | `/category/maternity/briefs-bottomwear` | `briefs-bottomwear` |
 
 ## Current Last ID
-Check `src/lib/items.ts` — last entry ID is currently **23**. Next ID = **24**.
+Check `src/lib/items.ts` — last entry ID is currently **26**. Next ID = **27**.
 
 ## Example
 ```ts

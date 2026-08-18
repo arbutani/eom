@@ -3,8 +3,8 @@ import ProductCard from "@/components/product-card";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
-export default function MaternityBriefsBottomwearPage() {
-  const categoryProducts = Object.values(items).filter((p) => p.category === "briefs-bottomwear");
+export default function InnerwearBrasPage() {
+  const categoryProducts = Object.values(items).filter((p) => p.category === "bras");
 
   return (
     <div className="min-h-screen bg-white">
@@ -13,10 +13,10 @@ export default function MaternityBriefsBottomwearPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-              Maternity Briefs &amp; Bottomwear
+              Women&apos;s Bras
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Stretchable and comfortable bottomwear for expecting mothers.
+              Supportive and comfortable bras for everyday wear.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
