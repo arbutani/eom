@@ -12,7 +12,7 @@ function ArrowRightIcon({ size = 18 }: { size?: number }) {
 
 export default function InnerwearPage() {
   const innerwearProducts = Object.values(items).filter(
-    (p) => p.category === "innerwear" || p.category === "bras" || p.category === "briefs"
+    (p) => p.category === "innerwear" || p.category === "bras" || p.category === "panties"
   );
 
   return (
@@ -48,16 +48,16 @@ export default function InnerwearPage() {
                 </div>
               </div>
             </Link>
-            <Link href="/category/innerwear/briefs" className="group block">
+            <Link href="/category/innerwear/panties" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
                   src="/13.webp"
-                  alt="Briefs"
+                  alt="Panties"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                  <h3 className="font-display text-xl font-semibold text-white">Briefs</h3>
+                  <h3 className="font-display text-xl font-semibold text-white">Briefs & Panties</h3>
                   <p className="text-sm text-gray-200 mt-1">Soft & breathable</p>
                   <span className="inline-flex items-center gap-1 text-sm font-medium text-white mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                     Shop now <ArrowRightIcon size={14} />
