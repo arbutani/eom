@@ -11,9 +11,10 @@ function ArrowRightIcon({ size = 18 }: { size?: number }) {
 }
 
 export default function InnerwearPage() {
-  const innerwearProducts = Object.values(items).filter(
-    (p) => p.category === "innerwear" || p.category === "bras" || p.category === "panties"
-  );
+  const innerwearProducts = Object.values(items)
+    .filter((p) => ["innerwear", "bras", "panties"].includes(p.category))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5);
 
   return (
     <div className="min-h-screen bg-white">

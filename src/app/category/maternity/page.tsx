@@ -11,9 +11,10 @@ function ArrowRightIcon({ size = 18 }: { size?: number }) {
 }
 
 export default function MaternityPage() {
-  const maternityProducts = Object.values(items).filter(
-    (p) => p.category === "maternity" || p.category === "kurti-topwear" || p.category === "feeding-bras"
-  );
+  const maternityProducts = Object.values(items)
+    .filter((p) => ["maternity", "kurti-topwear", "feeding-bras"].includes(p.category))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5);
 
   return (
     <div className="min-h-screen bg-white">
