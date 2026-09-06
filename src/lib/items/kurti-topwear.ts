@@ -222,9 +222,9 @@ export const items = {
     name: "Feeding Dress for Women",
     price: "₹635",
     originalPrice: "₹800",
-    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/52.webp",
+    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/52-v2.webp",
     images: [
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/52.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/52-v2.webp",
       "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/52-52.webp",
     ],
     desc: "This beautiful Maternity cum Breastfeed Kurta Set is so soft and comfortable, A-line design and ankle length make you look more elegant in pregnancy or post pregnancy. Its Rayon Slub fabric makes this kurta comfortable for an expecting woman or a new mother. It has a specially designed invisible zipped breastfeeding slit, that makes it super convenient for breastfeeding your little one anytime.",
