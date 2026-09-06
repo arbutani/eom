@@ -114,6 +114,8 @@ export default function CheckoutPage() {
   const [locationLoading, setLocationLoading] = useState(false);
   const [showAlternatePhone, setShowAlternatePhone] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [acceptedPolicy, setAcceptedPolicy] = useState(false);
+  const [policyError, setPolicyError] = useState("");
 
   const fieldRefs = useRef<Record<string, HTMLInputElement | null>>({});
   const gpsSectionRef = useRef<HTMLDivElement | null>(null);
@@ -208,6 +210,12 @@ export default function CheckoutPage() {
       return;
     }
 
+    if (!acceptedPolicy) {
+      setPolicyError("Please read and accept the policy before placing your order.");
+      document.getElementById("policy-accept")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
     setIsSubmitting(true);
 
     const { fullName, phoneNumber, pinCode, state, city, houseNo, roadArea } = formData;
@@ -223,7 +231,9 @@ export default function CheckoutPage() {
     if (formData.alternatePhone) message += `*Alternate Phone:* ${formData.alternatePhone}\n`;
     message += `*Address Type:* ${addressTypeLabel}\n`;
     message += `*Address:* ${address}\n`;
-    message += `*GPS Location:* ${locationStr}\n\n`;
+    message += `*GPS Location:* ${locationStr}\n`;
+    message += `*Google Maps:* https://www.google.com/maps?q=${gpsLocation!.lat},${gpsLocation!.lng}\n`;
+    message += `*Policy Accepted:* Yes (Customer has read and accepted all policies)\n\n`;
 
     message += "🛍️ *Order Details*\n";
     cartItems.forEach((item, index) => {
@@ -539,31 +549,51 @@ export default function CheckoutPage() {
 
               <div className="hidden lg:block">
                 <div className="border border-gray-100 rounded-2xl p-6 sticky top-6">
-                  <OrderSummary cartItems={cartItems} total={total} itemPriceTotal={itemPriceTotal} isSubmitting={isSubmitting} />
+                  <OrderSummary cartItems={cartItems} total={total} itemPriceTotal={itemPriceTotal} isSubmitting={isSubmitting} acceptedPolicy={acceptedPolicy} onPolicyChange={setAcceptedPolicy} policyError={policyError} setPolicyError={setPolicyError} />
                 </div>
               </div>
 
               {/* Mobile order summary (inline, above the sticky CTA bar) */}
               <div className="lg:hidden border border-gray-100 rounded-2xl p-5">
-                <OrderSummary cartItems={cartItems} total={total} itemPriceTotal={itemPriceTotal} isSubmitting={isSubmitting} hideSubmit />
+                <OrderSummary cartItems={cartItems} total={total} itemPriceTotal={itemPriceTotal} isSubmitting={isSubmitting} hideSubmit acceptedPolicy={acceptedPolicy} onPolicyChange={setAcceptedPolicy} policyError={policyError} setPolicyError={setPolicyError} />
               </div>
             </div>
 
             {/* Sticky mobile CTA bar */}
             <div className="lg:hidden fixed bottom-0 left-0 right-0 z-30 border-t border-gray-100 bg-white/95 backdrop-blur px-4 py-3 shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
-              <div className="flex items-center justify-between gap-4 max-w-7xl mx-auto">
-                <div>
-                  <p className="text-xs text-gray-500">Total</p>
-                  <p className="text-lg font-bold text-gray-900">{formatINR(total)}</p>
+              <div className="flex flex-col gap-2 max-w-7xl mx-auto">
+                <label id="policy-accept" className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={acceptedPolicy}
+                    onChange={(e) => {
+                      setAcceptedPolicy(e.target.checked);
+                      if (e.target.checked) setPolicyError("");
+                    }}
+                    className="h-3.5 w-3.5 rounded border-gray-300 text-black focus:ring-black"
+                  />
+                  <span>
+                    I agree to the{" "}
+                    <Link href="/policy" className="text-black underline underline-offset-2 hover:text-gray-800">
+                      Policy
+                    </Link>
+                  </span>
+                </label>
+                {policyError && <p className="text-xs text-red-500">{policyError}</p>}
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs text-gray-500">Total</p>
+                    <p className="text-lg font-bold text-gray-900">{formatINR(total)}</p>
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-6 py-3.5 text-base font-medium text-white hover:bg-green-600 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                  >
+                    {isSubmitting ? <Spinner /> : <WhatsAppIcon />}
+                    {isSubmitting ? "Opening..." : "Place Order"}
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-6 py-3.5 text-base font-medium text-white hover:bg-green-600 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
-                >
-                  {isSubmitting ? <Spinner /> : <WhatsAppIcon />}
-                  {isSubmitting ? "Opening..." : "Place Order"}
-                </button>
               </div>
             </div>
           </form>
@@ -581,12 +611,20 @@ function OrderSummary({
   itemPriceTotal,
   isSubmitting,
   hideSubmit,
+  acceptedPolicy,
+  onPolicyChange,
+  policyError,
+  setPolicyError,
 }: {
   cartItems: CartItem[];
   total: number;
   itemPriceTotal: (price: string, qty: number) => string;
   isSubmitting: boolean;
   hideSubmit?: boolean;
+  acceptedPolicy: boolean;
+  onPolicyChange: (checked: boolean) => void;
+  policyError: string;
+  setPolicyError: (msg: string) => void;
 }) {
   return (
     <>
@@ -621,10 +659,29 @@ function OrderSummary({
       </div>
       {!hideSubmit && (
         <>
+          <label id="policy-accept" className="flex items-start gap-3 text-sm text-gray-600 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={acceptedPolicy}
+              onChange={(e) => {
+                onPolicyChange(e.target.checked);
+                if (e.target.checked) setPolicyError("");
+              }}
+              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-black focus:ring-black"
+            />
+            <span>
+              I have read and agree to the{" "}
+              <Link href="/policy" className="text-black underline underline-offset-2 hover:text-gray-800">
+                Policy
+              </Link>{" "}
+              including order confirmation, shipping, return, exchange, refund, and quality terms.
+            </span>
+          </label>
+          {policyError && <p className="text-xs text-red-500 mt-2">{policyError}</p>}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-8 py-3.5 text-base font-medium text-white hover:bg-green-600 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+            className="w-full mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-8 py-3.5 text-base font-medium text-white hover:bg-green-600 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
           >
             {isSubmitting ? <Spinner /> : <WhatsAppIcon />}
             {isSubmitting ? "Opening WhatsApp..." : "Place Order on WhatsApp"}

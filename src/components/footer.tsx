@@ -93,7 +93,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-gray-600">
                 <MapPinIcon />
-                <span>Bhavnagar, Gujarat, India</span>
+                <span>Gujarat, India</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <MailIcon />
@@ -110,7 +110,7 @@ export default function Footer() {
         <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-400 order-2 sm:order-1">© {new Date().getFullYear()} Bloom & Curve. All rights reserved.</p>
           <div className="flex items-center gap-5 order-1 sm:order-2">
-            <Link href="/terms" className="text-xs text-gray-400 hover:text-gray-600 transition-colors"> Happy Shopping</Link>
+           
             
           </div>
         </div>
