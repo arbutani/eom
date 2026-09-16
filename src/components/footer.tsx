@@ -65,7 +65,7 @@ export default function Footer() {
               <Link href="#" aria-label="Twitter" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
                 <TwitterIcon />
               </Link>
-              <Link href="#" aria-label="Youtube" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+              <Link href="https://youtube.com/@boomandcurve?si=a6AuwvvKrLlZHVtL" aria-label="Youtube" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
                 <YoutubeIcon />
               </Link>
             </div>
@@ -97,7 +97,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <MailIcon />
-                <a href="mailto:butaniankit1107@gmail.com" className="hover:text-blue-600 transition-colors">butaniankit1107@gmail.com</a>
+                <a href="mailto:curveboom@gmail.com" className="hover:text-blue-600 transition-colors">curveboom@gmail.com</a>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-600">
                 <PhoneIcon />
