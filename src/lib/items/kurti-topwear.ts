@@ -287,7 +287,7 @@ export const items = {
       "Country of Origin: India",
     ],
     discount: "32% off",
-    sizes: ["M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     category: "kurti-topwear",
   },
   54: {
