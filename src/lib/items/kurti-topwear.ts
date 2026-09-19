@@ -259,10 +259,10 @@ export const items = {
     name: "Round Neck Cotton Zip Maternity Top & Pocket Pant Cod Set",
     price: "₹615",
     originalPrice: "₹900",
-    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53.webp",
+    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53v1.webp",
     images: [
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53.webp",
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53-53.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53v1.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53-53v1.webp",
     ],
     desc: "This beautiful Maternity cum Breastfeed Kurta Set is so soft and comfortable, A-line design and above knee length make you look more elegant in pregnancy or post pregnancy. Its Cotton Cambric fabric makes this kurta comfortable for an expecting woman or a new mother. It has a specially designed invisible zipped breastfeeding slit, that makes it super convenient for breastfeeding your little one anytime. Perfect for baby showers and parties.",
     details: [
