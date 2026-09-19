@@ -256,7 +256,7 @@ export const items = {
   },
   53: {
     id: 53,
-    name: "Round Neck Cotton Zip Maternity Top & Pocket Pant Cod Set",
+    name: "Printed Maternity Kurta Set - Comfortable & Stylish Pregnancy Wear",
     price: "₹615",
     originalPrice: "₹900",
     image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/53v1.webp",
