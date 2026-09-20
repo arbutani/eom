@@ -56,10 +56,10 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-3 mt-5">
-              <Link href="#" aria-label="Facebook" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+              <Link href="https://www.facebook.com/profile.php?id=61594288513515" aria-label="Facebook" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
                 <FacebookIcon />
               </Link>
-              <Link href="#" aria-label="Instagram" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+              <Link href="https://www.instagram.com/boomandcurve/?__pwa=1" aria-label="Instagram" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
                 <InstagramIcon />
               </Link>
               <Link href="#" aria-label="Twitter" className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
