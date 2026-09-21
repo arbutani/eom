@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-10 mb-10">
           <div className="col-span-2 md:col-span-2 pr-4">
             <Link href="/" className="font-bold text-xl tracking-tight hover:text-blue-600 transition-colors">
-              Bloom & Curve
+Boom & Curve
             </Link>
             <p className="text-sm text-gray-500 mt-3 leading-relaxed max-w-xs">
               Premium shopping experience for everyone.
@@ -108,7 +108,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400 order-2 sm:order-1">© {new Date().getFullYear()} Bloom & Curve. All rights reserved.</p>
+          <p className="text-xs text-gray-400 order-2 sm:order-1">© {new Date().getFullYear()} Boom & Curve. All rights reserved.</p>
           <div className="flex items-center gap-5 order-1 sm:order-2">
            
             

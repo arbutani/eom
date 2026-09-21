@@ -223,7 +223,7 @@ export default function CheckoutPage() {
     const address = `${houseNo}, ${roadArea}${formData.landmark ? `, Landmark: ${formData.landmark}` : ""}, ${city}, ${state} - ${pinCode}`;
     const locationStr = `Lat: ${gpsLocation!.lat.toFixed(6)}, Lng: ${gpsLocation!.lng.toFixed(6)}`;
 
-    let message = "📦 *NEW ORDER - Bloom & Curve*\n\n";
+    let message = "📦 *NEW ORDER - Boom & Curve*\n\n";
 
     message += "👤 *Customer Details*\n";
     message += `*Name:* ${fullName}\n`;

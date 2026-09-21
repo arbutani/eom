@@ -12,11 +12,11 @@ export default function Navbar({ backLink, hideCartIcon }: { backLink?: boolean;
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="/" className="font-bold text-xl tracking-tight hover:text-blue-600 transition-colors">Bloom & Curve</Link>
+            <Link href="/" className="font-bold text-xl tracking-tight hover:text-blue-600 transition-colors">Boom & Curve</Link>
           </div>
           <div className="flex items-center gap-4">
             {backLink ? (
-              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900">Back to Bloom & Curve</Link>
+              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900">Back to Boom & Curve</Link>
             ) : (
               <>
                 <div className="hidden md:flex items-center gap-8">

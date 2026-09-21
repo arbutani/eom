@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bloom & Curve - Premium Shopping Experience",
+  title: "Boom & Curve - Premium Shopping Experience",
   description:
     "Discover amazing products with the best shopping experience. Fast delivery, premium quality, and exceptional service.",
   verification: {
