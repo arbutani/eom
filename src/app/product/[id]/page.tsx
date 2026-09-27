@@ -32,6 +32,7 @@ export default function ItemPage() {
   const baseItem = items[baseId as keyof typeof items];
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [showSizeError, setShowSizeError] = useState(false);
+  const [showQuantityError, setShowQuantityError] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -53,8 +54,23 @@ export default function ItemPage() {
     : [{ src: product.image, alt: product.name }];
 
   const handleAddToCart = (e: React.MouseEvent) => {
+    let invalid = false;
+
     if (!selectedSize) {
       setShowSizeError(true);
+      invalid = true;
+    } else {
+      setShowSizeError(false);
+    }
+
+    if (!quantity || quantity < 1) {
+      setShowQuantityError(true);
+      invalid = true;
+    } else {
+      setShowQuantityError(false);
+    }
+
+    if (invalid || inCart) {
       e.preventDefault();
     }
   };
@@ -63,7 +79,7 @@ export default function ItemPage() {
     ? `/cart?id=${product.id}&size=${encodeURIComponent(selectedSize)}&qty=${quantity}`
     : "#";
 
-  const isAddToCartDisabled = !selectedSize || inCart;
+  const isAddToCartDisabled = inCart;
 
   return (
     <div className="min-h-screen bg-white">
@@ -155,7 +171,7 @@ export default function ItemPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Quantity</h3>
                 <div className="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white">
                   <button
-                    onClick={() => setQuantity((q) => Math.max(q - 1, 1))}
+                    onClick={() => { setQuantity((q) => Math.max(q - 1, 1)); setShowQuantityError(false); }}
                     disabled={quantity <= 1}
                     className="inline-flex h-10 w-10 items-center justify-center rounded-l-full text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     aria-label="Decrease quantity"
@@ -164,14 +180,15 @@ export default function ItemPage() {
                   </button>
                   <span className="w-10 text-center text-sm font-semibold text-gray-900">{quantity}</span>
                   <button
-                    onClick={() => setQuantity((q) => Math.min(q + 1, 1))}
-                    disabled={quantity >= 1}
+                    onClick={() => { setQuantity((q) => Math.min(q + 1, 3)); setShowQuantityError(false); }}
+                    disabled={quantity >= 3}
                     className="inline-flex h-10 w-10 items-center justify-center rounded-r-full text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     aria-label="Increase quantity"
                   >
                     +
                   </button>
                 </div>
+                {showQuantityError && <p className="text-sm text-brand mt-2">Please select a valid quantity before adding to cart.</p>}
               </div>
 
               <Link

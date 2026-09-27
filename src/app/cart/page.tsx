@@ -94,7 +94,8 @@ export default function CartPage() {
       if (existingIndex >= 0) {
         // already in cart, do not add again
       } else {
-        stored.push({ id, quantity: 1, size: sizeParam || undefined });
+        const qty = Math.min(Math.max(Number.isFinite(qtyParam) ? qtyParam : 1, 1), 3);
+        stored.push({ id, quantity: qty, size: sizeParam || undefined });
         saveCart(stored);
         loadCart();
       }
@@ -113,7 +114,7 @@ export default function CartPage() {
       removeItem(productId, size);
       return;
     }
-    stored[index].quantity = Math.min(newQty, 1);
+    stored[index].quantity = Math.min(newQty, 3);
     saveCart(stored);
     loadCart();
   };
@@ -174,7 +175,7 @@ export default function CartPage() {
                           <span className="w-10 text-center text-sm font-semibold text-gray-900">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, 1, item.size)}
-                            disabled={item.quantity >= 1}
+                            disabled={item.quantity >= 3}
                             className="inline-flex h-9 w-9 items-center justify-center rounded-r-full text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             aria-label="Increase quantity"
                           >
