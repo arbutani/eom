@@ -387,7 +387,7 @@ export const items = {
   },
   84: {
     id: 84,
-    name: "Austivo Women Multi Sweatshirt",
+    name: "Women Multi Sweatshirt",
     price: "₹950",
     originalPrice: "₹1,500",
     image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/84.webp",
@@ -395,7 +395,7 @@ export const items = {
       "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/84.webp",
       "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/84-84.webp",
     ],
-    desc: "Austivo Women Multi Colourblock Sweatshirt. Crafted from soft cotton blend fabric with a high/choker neck and long sleeves. Features colorblocked pattern with kangaroo pockets and applique surface styling, perfect for casual wear.",
+    desc: "Women Multi Colourblock Sweatshirt. Crafted from soft cotton blend fabric with a high/choker neck and long sleeves. Features colorblocked pattern with kangaroo pockets and applique surface styling, perfect for casual wear.",
     details: [
       "Color: Multicolor",
       "Fabric: Cotton Blend",
@@ -417,7 +417,7 @@ export const items = {
   },
   85: {
     id: 85,
-    name: "Fleximaa Women's Sweatshirts",
+    name: "Women's Sweatshirts",
     price: "₹899",
     originalPrice: "₹1,200",
     image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/85.webp",
@@ -425,7 +425,7 @@ export const items = {
       "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/85.webp",
       "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/85-85.webp",
     ],
-    desc: "Fleximaa Women's Sweatshirts. Womens 100% Cotton Plain Stylish Hooded Neck Full Sleeve Hoodies. Features zipper closure, hooded neck, cuffed sleeves, kangaroo pockets, and tie-up surface styling.",
+    desc: "Women's Sweatshirts. Womens 100% Cotton Plain Stylish Hooded Neck Full Sleeve Hoodies. Features zipper closure, hooded neck, cuffed sleeves, kangaroo pockets, and tie-up surface styling.",
     details: [
       "Color: Purple",
       "Fabric: Cotton",
