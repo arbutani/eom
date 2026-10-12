@@ -336,10 +336,10 @@ export const items = {
     name: "Stylish Women's Contrast Shade Jacket | Hoodie Sweatshirt | Winter Jacket for Women | Zipper Hoodie for Women | Ladies Sweatshirt | Women's Sweater",
     price: "₹900",
     originalPrice: "₹1,200",
-    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/82.webp",
+    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/82v1.webp",
     images: [
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/82.webp",
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/82-82.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/82v1.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/82-82v1.webp",
     ],
     desc: "Women's Full-Zip Hooded Contrast Shade Sweatshirt. Contrast 2 Shade, Front Zipper Closure, Adjustable Drawstring Hood, Full Sleeves, and Two Front Pockets. Designed for Daily Casual wear in Light Cold Weather & Winter.",
     details: [
