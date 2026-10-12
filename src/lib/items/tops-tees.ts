@@ -276,10 +276,10 @@ export const items = {
     name: "Urban Forge Women Black & White Striped Oversized T-Shirt | Stylish Casual Wear Top for Girls",
     price: "₹312",
     originalPrice: "₹400",
-    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/45.webp",
+    image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/45v1.webp",
     images: [
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/45.webp",
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/45-45.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/45v1.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/45-45v1.webp",
     ],
     desc: "Urban Forge Women Black & White Striped Oversized T-Shirt. Crafted from soft cotton fabric with a regular fit, round neck, and short sleeves. Features stylish horizontal stripes with a relaxed oversized silhouette. Perfect for casual occasions, offering a comfortable and trendy streetwear look.",
     details: [
