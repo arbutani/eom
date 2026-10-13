@@ -206,8 +206,7 @@ export default function HeroPage() {
             <Link href="/category/innerwear" className="group block">
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 aspect-[4/3]">
                 <img
-                  src="/11
-                  .webp"
+                  src="/11.webp"
                   alt="Women's Innerwear collection"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
