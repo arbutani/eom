@@ -940,7 +940,7 @@ export const items = {
     image: "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/99.webp",
     images: [
       "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/99.webp",
-      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/99-99.webp",
+      "https://cdn.jsdelivr.net/gh/arbutani/web-img@main/99-99v1.webp",
     ],
     desc: "Lace-Work-Peach-Flower-Kurta crafted from soft cotton fabric. Features an A-line fit with three-quarter sleeves and round neck. The peach floral print and lace border detailing make it perfect for party wear.",
     details: [
